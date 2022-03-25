@@ -2,6 +2,7 @@ package com.tyranotyrano.config;
 
 import com.tyranotyrano.domain.discount.DiscountPolicy;
 import com.tyranotyrano.domain.discount.FixDiscountPolicy;
+import com.tyranotyrano.domain.discount.RateDiscountPolicy;
 import com.tyranotyrano.domain.member.repository.MemberRepository;
 import com.tyranotyrano.domain.member.repository.MemoryMemberRepository;
 import com.tyranotyrano.service.MemberService;
@@ -24,6 +25,10 @@ public class AppConfig {
     }
 
     private DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        // 1. 정액 할인 정책
+        //return new FixDiscountPolicy();
+
+        // 2. 정률 할인 정책
+        return new RateDiscountPolicy();
     }
 }
