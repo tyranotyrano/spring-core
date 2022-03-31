@@ -1,0 +1,21 @@
+package com.tyranotyrano.config;
+
+import static org.assertj.core.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.tyranotyrano.AutoAppConfig;
+import com.tyranotyrano.service.MemberService;
+
+class AutoAppConfigTest {
+
+    @Test
+    void basicScan() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+
+        MemberService memberService = ac.getBean(MemberService.class);
+        assertThat(memberService).isInstanceOf(MemberService.class);
+    }
+}
