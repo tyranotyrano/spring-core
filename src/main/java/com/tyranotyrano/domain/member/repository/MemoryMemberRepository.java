@@ -3,8 +3,11 @@ package com.tyranotyrano.domain.member.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.tyranotyrano.domain.member.Member;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
 	private static Map<Long, Member> store = new HashMap<>();

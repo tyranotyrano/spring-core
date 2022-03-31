@@ -1,17 +1,21 @@
 package com.tyranotyrano.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.tyranotyrano.domain.discount.DiscountPolicy;
 import com.tyranotyrano.domain.member.Member;
 import com.tyranotyrano.domain.member.repository.MemberRepository;
 import com.tyranotyrano.domain.order.Order;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImpl(MemberRepository memberRepository,
-                            DiscountPolicy discountPolicy) {
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
@@ -25,7 +29,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * 테스트 용도
+     * 테스트 용도!
      * */
     public MemberRepository getMemberRepository() {
         return memberRepository;
