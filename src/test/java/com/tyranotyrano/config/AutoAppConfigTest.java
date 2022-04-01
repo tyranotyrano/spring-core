@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.tyranotyrano.AutoAppConfig;
 import com.tyranotyrano.service.MemberService;
 
 class AutoAppConfigTest {
