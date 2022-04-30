@@ -1,8 +1,11 @@
 package com.tyranotyrano.domain.discount;
 
+import org.springframework.stereotype.Component;
+
 import com.tyranotyrano.domain.member.Grade;
 import com.tyranotyrano.domain.member.Member;
 
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private static final int DISCOUNT_FIX_AMOUNT = 1000; // 1000원 할인
