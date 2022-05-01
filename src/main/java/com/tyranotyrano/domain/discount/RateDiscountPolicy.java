@@ -1,11 +1,13 @@
 package com.tyranotyrano.domain.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.tyranotyrano.domain.member.Grade;
 import com.tyranotyrano.domain.member.Member;
 
 @Component
+@Qualifier("mainDiscountPolicy")
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private static final int DISCOUNT_PERCENT = 10; // 10% 할인
