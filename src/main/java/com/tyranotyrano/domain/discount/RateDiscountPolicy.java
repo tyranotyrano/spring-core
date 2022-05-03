@@ -3,11 +3,12 @@ package com.tyranotyrano.domain.discount;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+import com.tyranotyrano.annotation.MainDiscountPolicy;
 import com.tyranotyrano.domain.member.Grade;
 import com.tyranotyrano.domain.member.Member;
 
 @Component
-@Primary
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private static final int DISCOUNT_PERCENT = 10; // 10% 할인
