@@ -1,9 +1,6 @@
 package com.tyranotyrano.lifecycle;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
     private String url;
 
     public NetworkClient() {
@@ -28,19 +25,15 @@ public class NetworkClient implements InitializingBean, DisposableBean {
         System.out.println("close : " + this.url);
     }
 
-    // 빈 초기화 메서드(객체생성 -> 의존관계 설정 후 호출되는 콜백 메서드)
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("NetworkClient.afterPropertiesSet");
+    public void init() {
+        System.out.println("NetworkClient.init");
         connect();
         call("초기화 연결 메세지");
     }
 
 
-    // 빈 소멸 메서드(객체 소멸 전 호출되는 콜백 메서드)
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("NetworkClient.destroy");
+    public void close() {
+        System.out.println("NetworkClient.close");
         disconnect();
     }
 }
